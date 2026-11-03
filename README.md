@@ -1,10 +1,12 @@
 # DentalVista · 口腔解剖
 
 **可交互的三维口腔解剖教学平台 · Interactive 3D oral anatomy for teaching**
-by 自由动脉 FreedomAI — a sibling of [BodyVista](https://freedomintelligence.github.io/BodyVista/).
+by 自由动脉 FreedomAI / [FreedomIntelligence](https://github.com/FreedomIntelligence) — a sibling of [BodyVista](https://freedomintelligence.github.io/BodyVista/).
+
+**Live site: <https://dentalvista.github.io>**  ·  **Demo video (2 min, 中文配音 + 中英字幕): [video/out/DentalVista_demo.mp4](video/out/DentalVista_demo.mp4)**
 
 Everything runs in the browser: no backend, no database. The site is a static Vite build that can be
-hosted on GitHub Pages (workflow included).
+hosted on GitHub Pages (workflow included). Code is MIT-licensed (see LICENSE).
 
 ![hero](shots/hero.png)
 
@@ -64,6 +66,13 @@ Tongue / Nerves / Vessels / Glands), assigns Principled materials, smooths the m
 ```bash
 npm run shots        # headless Chrome screenshots of scripted views into shots/
 ```
+
+## Demo video
+
+The demo video is rendered by the site itself: `video/script.json` holds the narration, `node tools/tts.mjs`
+synthesises the voice-over (Edge TTS, zh-CN-YunjianNeural), and `node tools/record.mjs` drives the scripted
+scenes frame by frame in headless Chrome (GPU) and muxes them with the narration via ffmpeg into
+`video/out/DentalVista_demo.mp4`.
 
 `src/main.js` exposes `window.__dv` (app, viewer, model, section, interact, anim and named views)
 for scripting and tests.

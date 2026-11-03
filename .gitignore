@@ -4,6 +4,5 @@ blender/*.blend
 blender/*.blend1
 .DS_Store
 video/frames/
-video/out/
 video/check/
 video/record.log
