@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+const b = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: 'new', args: ['--enable-gpu', '--ignore-gpu-blocklist', '--use-angle=d3d11', '--no-sandbox'] });
+const p = await b.newPage(); await p.setViewport({ width: 1600, height: 1000 });
+const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+await p.goto('https://dentalvista.github.io/?nointro', { waitUntil: 'networkidle0', timeout: 120000 });
+await p.waitForFunction('window.__dv && window.__dv.ready', { timeout: 60000 });
+await new Promise(r => setTimeout(r, 2000));
+await p.screenshot({ path: 'shots/live.png' });
+console.log('LIVE OK structures', await p.evaluate(() => window.__dv.model.list().length), 'errors:', errs.length ? errs : 'none');
+await b.close(); process.exit(0);
