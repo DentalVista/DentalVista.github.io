@@ -1,0 +1,14 @@
+[
+  { "id": "S01", "scene": "splash", "zh": "欢迎来到 DentalVista，自由动脉推出的可交互三维口腔解剖教学平台。", "en": "Welcome to DentalVista, FreedomAI's interactive 3D oral anatomy platform." },
+  { "id": "S02", "scene": "reveal", "zh": "进入三维口腔，牙齿从颌骨中依次萌出，整个口腔在你眼前展开。", "en": "Enter the 3D mouth: the teeth erupt one by one and the whole mouth unfolds." },
+  { "id": "S03", "scene": "hero", "zh": "模型包含 52 颗牙齿、颌骨、牙龈、腭与舌、神经血管和唾液腺，共 94 个结构，全部按真实毫米尺寸建模。", "en": "52 teeth, jaws, gingiva, palate and tongue, nerves, vessels and salivary glands: 94 structures, all in true millimetres." },
+  { "id": "S04", "scene": "layers", "zh": "在口腔结构面板里，每个系统都可以设为实体、半透明、线框或隐藏，一层一层看清内部。", "en": "Every system can be solid, translucent, wireframe or hidden, so you can peel the mouth layer by layer." },
+  { "id": "S05", "scene": "select", "zh": "点击任意结构，右侧显示中英双语知识卡：FDI 牙位、萌出年龄、牙根与根管、临床要点，还可以一键向 DentalGPT 提问。", "en": "Click any structure for a bilingual knowledge card: FDI code, eruption age, roots and canals, clinical points, and a one-click question to DentalGPT." },
+  { "id": "S06", "scene": "section", "zh": "剖面工具可以沿矢状、冠状或水平面切开模型，切面以实体显示，釉质、牙本质、牙髓一目了然。", "en": "The section tool cuts along any plane with solid caps: enamel, dentine and pulp at a glance." },
+  { "id": "S07", "scene": "eruption", "zh": "口腔律动里的萌出时间轴，从出生演示到二十二岁：乳牙萌出、替牙期、恒牙列完成。", "en": "The eruption timeline runs from birth to 22: primary teeth, mixed dentition, full permanent dentition." },
+  { "id": "S08", "scene": "caries", "zh": "龋病进展演示了 36 牙从釉质白垩斑、龋洞、牙本质龋，到牙髓炎和根尖周脓肿的全过程。", "en": "Caries progression on tooth 36: white spot, cavity, dentine caries, pulpitis and periapical abscess." },
+  { "id": "S09", "scene": "chew", "zh": "咀嚼动画展示下颌绕髁突的转动与滑动；把颌骨调成半透明，下牙槽神经与血管的走行清晰可见。", "en": "Chewing shows the mandible rotating and gliding on the condyles; with the bone translucent, the inferior alveolar nerve and vessels are clear." },
+  { "id": "S10", "scene": "tours", "zh": "八条教学路线把镜头、图层和剖面串成分步课程，例如下牙槽神经阻滞麻醉的解剖。", "en": "Eight guided lessons chain camera, layers and sections into step-by-step courses, such as the anatomy of the inferior alveolar nerve block." },
+  { "id": "S11", "scene": "quiz", "zh": "解剖挑战用主动回忆巩固记忆：结构识别、解剖寻找、FDI 编号，每轮五题。", "en": "The anatomy challenge uses active recall: identify, locate, FDI numbering, five questions a round." },
+  { "id": "S12", "scene": "end", "zh": "DentalVista，让口腔解剖看得见、摸得着。自由动脉，与你一起守护全世界的笑容。", "en": "DentalVista makes oral anatomy visible and tangible. FreedomAI, protecting every smile on Earth." }
+]

@@ -1,0 +1,13 @@
+import { preview } from 'vite';
+import puppeteer from 'puppeteer-core';
+const server = await preview({ root: process.cwd(), preview: { port: 5180, strictPort: true }, logLevel: 'error' });
+const browser = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: 'new', args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--no-sandbox'] });
+const page = await browser.newPage(); await page.setViewport({ width: 1400, height: 900 });
+const errs = []; page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+await page.goto('http://localhost:5180/?nointro', { waitUntil: 'networkidle0', timeout: 120000 });
+await page.waitForFunction('window.__dv && window.__dv.ready', { timeout: 60000 });
+const info = await page.evaluate(() => ({ structures: window.__dv.model.list().length, teeth: window.__dv.model.teeth.length, title: document.title }));
+await new Promise(r => setTimeout(r, 1500));
+await page.screenshot({ path: 'shots/dist-check.png' });
+console.log('DIST OK', JSON.stringify(info), 'errors:', errs.length ? errs : 'none');
+await browser.close(); server.httpServer.close(); process.exit(0);
