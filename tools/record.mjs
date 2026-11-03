@@ -128,7 +128,7 @@ const out = 'video/out/DentalVista_demo.mp4';
 const args = ['-y', '-framerate', String(fpsOut), '-i', path.join(framesDir, '%05d.jpg'), ...inputs,
   '-filter_complex', filters.join(';'), '-map', '0:v', '-map', '[aout]',
   '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', String(fpsOut),
-  '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', out];
+  '-c:a', 'aac', '-ar', '48000', '-b:a', '160k', '-shortest', '-movflags', '+faststart', out];
 const r = spawnSync(ffmpeg.path, args, { stdio: ['ignore', 'ignore', 'pipe'], encoding: 'utf8' });
 if (r.status !== 0) { console.error(r.stderr.slice(-2000)); process.exit(1); }
 console.log('wrote', out, (fs.statSync(out).size / 1e6).toFixed(1), 'MB');
